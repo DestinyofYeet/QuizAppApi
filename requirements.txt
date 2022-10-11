@@ -1,0 +1,8 @@
+# quart
+# hypercorn
+flask
+flask_restful
+waitress
+colorama
+mysql-connector-python
+bcrypt

@@ -1,0 +1,6 @@
+logs/
+data/
+.idea/
+__pycache__/
+
+start-QuizAppApi.sh
