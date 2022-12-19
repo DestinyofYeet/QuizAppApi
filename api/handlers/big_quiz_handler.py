@@ -26,7 +26,22 @@ class BigQuizHandler:
         return utils.give_response({"code": constants.APICodes.SUCCESS, "quiz": quiz.return_json()}, constants.HTTPCodes.OK)
 
     @staticmethod
-    @constants.APP.route("/big_quiz/all", methods=["GET"])
-    @decorators.require_token
-    def get():
-        pass
+    @constants.APP.route("/big_quiz/all/", methods=["GET"])
+    # @decorators.require_token
+    def rofl():
+        interface = Interface()
+        sql = "select * from quizapp_db.gr_rätsel_punkt"
+
+        result = interface.execute(sql)
+
+        data = []
+
+        for res in result:
+            data.append(
+                {
+                    "name": res[1],
+                    "koords": res[2]
+                }
+            )
+
+        return utils.give_response({"code": constants.APICodes.SUCCESS, "data": data}, constants.HTTPCodes.OK)
