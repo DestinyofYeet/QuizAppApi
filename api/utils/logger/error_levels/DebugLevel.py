@@ -1,5 +1,5 @@
 from colorama import Fore
-from .Level import Level
+from api.utils.logger.error_levels.Level import Level
 
 
 class DebugLevel(Level):

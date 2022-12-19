@@ -7,7 +7,7 @@ from api.utils.sql.interface import Interface
 class BigQuizHandler:
 
     @staticmethod
-    @constants.APP.route("/big_quiz/<string:location_name>", methods=['GET'])
+    @constants.APP.route("/big_quiz/by_name/<string:location_name>", methods=['GET'])
     @decorators.require_token
     def get(location_name: str):
         interface = Interface()
@@ -24,3 +24,9 @@ class BigQuizHandler:
         quiz = specific_quiz.get_quiz(location_name)
 
         return utils.give_response({"code": constants.APICodes.SUCCESS, "quiz": quiz.return_json()}, constants.HTTPCodes.OK)
+
+    @staticmethod
+    @constants.APP.route("/big_quiz/all", methods=["GET"])
+    @decorators.require_token
+    def get():
+        pass

@@ -9,8 +9,6 @@ from api.utils.sql.interface import Interface
 
 from flask_restful import request
 
-# TODO: Make quiz stuff functional again lol
-
 valid_quiz_options = [QuizType.generic, QuizType.specific]
 
 logger = Logger()
@@ -81,3 +79,4 @@ class QuizHandler:
         quiz = generic_quiz.get_quiz()
 
         return {"code": APICodes.SUCCESS, "quiz": quiz.return_json()}, HTTPCodes.OK
+
