@@ -27,7 +27,7 @@ def main():
         constants.APP.run(host=config.api_host, port=config.api_port, debug=True)
     else:
         waitress.serve(constants.APP, host=config.api_host, port=config.api_port,
-                       url_scheme="https")  # use in production
+                       )  # use in production
 
 
 if __name__ == '__main__':
