@@ -37,7 +37,6 @@ class BigQuizHandler:
         data = []
 
         for res in result:
-            print(res)
             data.append(
                 {
                     "name": res[1],
